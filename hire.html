@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="hire.css" rel="stylesheet" />
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("googleForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            let formData = new FormData();
+            formData.append("entry.1007642309", document.getElementById("fname").value);
+            formData.append("entry.1386280650", document.getElementById("lname").value);
+            formData.append("entry.576270092", document.getElementById("email").value);
+            formData.append("entry.1624042199", document.getElementById("description").value);
+
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLScj93TcgSK1L3r0TvK10_296xkmY0kgWhFlAxYuoqzqU2l8_A/formResponse", {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                document.getElementById("successMessage").style.display = "block"; // Show success message
+                document.getElementById("googleForm").reset(); // Clear form after submission
+            }).catch(error => console.error("Error!", error.message));
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="home">
+        <a class="homebutton" href="portfolio.html"><button>Home</button></a>
+        <a class="profilebutton" href="profile.html"><button>Profile</button></a>
+        <a class="coursesbutton" href="courses.html"><button>Courses</button></a>
+        <a href="education.html" class="educationbutton"><button>Education</button></a>
+        <a href="skills.html" class="skillsbutton"><button>Skills</button></a>
+    </div>
+
+    <div class="finally">
+        <marquee direction="left">Thank You.</marquee>
+    </div>
+
+    <section class="final">
+        <div class="input">
+            <p><b>Send Me a Message</b></p>
+        </div>
+
+        <div class="form">
+            <form id="googleForm">
+                <label for="fname">First Name:</label><br />
+                <input type="text" id="fname" name="entry.1007642309" required /><br />
+                <label for="lname">Last Name:</label><br />
+                <input type="text" id="lname" name="entry.1386280650" required /><br />
+                <label for="email">Email:</label><br />
+                <input type="text" id="email" name="entry.576270092" required /><br />
+                <label for="description">Description:</label><br />
+                <textarea id="description" name="entry.1624042199" required></textarea><br><br>
+                <button type="submit">Send Me</button>
+            </form>
+            <p id="successMessage" style="display: none; color: green;">Message Sent Successfully!</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    width:100%;
+    color:#f8f9fa;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,rgb(0, 255, 255),rgb(245, 245, 245),rgb(255, 192, 203,0.5));
+}
+
+.home{
+    position: fixed;
+    left: 10px;
+    top:10px;
+    gap:10px;
+
+}
+.home button{
+    background-color:#007bff;
+    color:white;
+    padding:10px 20px;
+    font-size:16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.home button:hover{
+    transform: scale(1.1);
+    background-color: aqua;
+}
+.home button:active{
+    transform: rotateY(-90deg);
+    transform: 0.3s ease;
+}
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color:#007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.button-container button:hover{
+    transform:scale(1.1);
+    background-color:aqua;
+}
+.button-container button:active {
+    transform: rotateY(90deg);
+    transition:0.3s ease;
+}
+.button-container:hover button:not(:hover){
+    filter: blur(5px);
+    opacity:0.5;
+}
+
+.TotalInfo{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    width:100%;
+    max-width: 1000px;
+    background:linear-gradient(135deg,rgb(245, 245, 245),rgb(255, 192, 203,0.5),rgb(0, 255, 255));
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+    color:black;
+}
+
+.img{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img img{
+    width:200px;
+    height:200px;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 4px solid lightblue;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  
+}
+.img img:hover{
+    transform: scale(1.1);
+    transition: 0.3 s ease-in-out;
+
+}
+.info{
+    width: 50%;
+    padding: 20px;
+    font-size: 18px;
+
+}
+.info p{
+   margin-bottom: 10px;
+}
+.info a{
+    text-decoration: none;
+    color: blue;
+    font-weight:bold;
+    transition: color 0.3s ease-in-out;
+}
+a:hover{
+    transform: scale(1.1);
+}
+
+/* --- Seventh Section: Social Media Buttons --- */
+.social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap:30px;
+}
+
+.social-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(82, 42, 163);
+    border: 2px solid rgb(82, 42, 163);
+    padding:10px;
+    border-radius: 50%;
+}
+.social-btn:hover{
+    transform:scale(1.3);
+    transition: 0.3s ease-in-out;
+}
+.social-btn:nth-child(3){
+    color: black;
+    border-color: black;
+}
+.social-btn:nth-child(4){
+    color:red;
+    border-color:red;
+}
+.social-btn i {
+    font-size: 32px;
+}

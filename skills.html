@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+    <div class="home">
+        <a class="homebutton" href="portfolio.html"><button>Home</button></a>
+        <a class="profilebutton" href="profile.html"><button>Profile</button></a>
+        <a class="coursesbutton" href="courses.html"><button>Courses</button></a>
+        <a href="education.html" class="educationbutton"><button>Education</button></a>
+
+    </div>
+    <div class="button-container">
+        <a href="hire.html" class="page-link"><button>Hire Me</button></a>
+    </div>
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>C++</li>
+            <li>DSA</li>
+            <li>NumPy</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>SQL</li>
+            <li>Machine Learning</li>
+            <li>Geometry</li>
+            <li>Scikit-learn</li>
+        </ul>
+    </section>
+    
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="ml-projects">
+            <h3>Machine Learning Projects</h3>
+            <ul>
+                <li><a href="https://colab.research.google.com/drive/1HgjOfBCTL5xf90Os-RCE_Kc_CPYWIWAz?usp=sharing">Binary Classification using Rice Dataset</a></li>
+                <li><a href="https://colab.research.google.com/drive/19Z2AGL49c8CGToShN3fhT95L2H6hvyZg?usp=sharing">Multi-Classification using MLP</a></li>
+                <li><a href="https://colab.research.google.com/drive/1ZzAyFVZLp04s26ctLhE72kLBahXh5V0-?usp=sharing">Data Augmentation using CNN (MNIST)</a></li>
+                <li><a href="https://colab.research.google.com/drive/1UOLiVTVtQw3_fiB-9I3S3Z79tUULVjOJ?usp=sharing">Transfer Learning</a></li>
+                <li><a href="https://colab.research.google.com/drive/1mKGiXFl1ytnFFgoSzNuudJcbr-NbVSE7?usp=sharing">Linear Regression</a></li>
+                <li><a href="https://colab.research.google.com/drive/1t3Q7TziFZsbvHFM9epNv7lWjSiO5KfSn?usp=sharing">Fairness Indicator</a></li>
+            </ul>
+        </div>
+        
+        <div class="frontend">
+            <h3>Front-end Development</h3>
+            <p>Developed 11+ projects using CSS properties like Flexbox, Grid, and JavaScript manipulations.</p>
+        </div>
+        
+        <div class="python-projects">
+            <h3>Python & C++ Projects</h3>
+            <p>Developed numerous projects during my master's degree lab sessions.</p>
+        </div>
+    </section>
+    
+    <section class="fire-detection">
+        <h2>Fire Detection System</h2>
+        <h3>Step 1: Gather Components</h3>
+        <ul>
+            <li>Arduino Uno</li>
+            <li>IR Flame Sensor</li>
+            <li>MQ-2 or MQ-135 Smoke Sensor</li>
+            <li>Buzzer</li>
+            <li>LED</li>
+            <li>Resistors</li>
+            <li>Breadboard & Jumper Wires</li>
+            <li>Power Supply (USB or Adapter)</li>
+        </ul>
+        
+        <h3>Step 2: Assemble the Circuit</h3>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Arduino Pin</th>
+            </tr>
+            <tr>
+                <td>Flame Sensor</td>
+                <td>A0 (Analog)</td>
+            </tr>
+            <tr>
+                <td>Smoke Sensor</td>
+                <td>A1 (Analog)</td>
+            </tr>
+            <tr>
+                <td>Buzzer</td>
+                <td>Pin 8 (Digital)</td>
+            </tr>
+            <tr>
+                <td>LED</td>
+                <td>Pin 9 (Digital)</td>
+            </tr>
+            <tr>
+                <td>GND</td>
+                <td>GND</td>
+            </tr>
+            <tr>
+                <td>VCC</td>
+                <td>5V</td>
+            </tr>
+        </table>
+        
+        <h3>Step 3: Arduino Code (C++)</h3>
+        <pre>
+            <code>
+                void setup(){
+                    pinMode(A0, INPUT);
+                    pinMode(A1, INPUT);
+                    pinMode(8, OUTPUT);
+                    pinMode(9, OUTPUT);
+                    Serial.begin(9600);
+                }
+
+                void loop(){
+                    int flameValue = analogRead(A0);
+                    int smokeValue = analogRead(A1);
+
+                    Serial.print("Flame: ");
+                    Serial.print(flameValue);
+                    Serial.print(" | Smoke: ");
+                    Serial.println(smokeValue);
+
+                    if (flameValue < 200 || smokeValue > 300){
+                        digitalWrite(8, HIGH);
+                        digitalWrite(9, HIGH);
+                        Serial.println("🔥 Fire Detected! 🔥");
+                    } else {
+                        digitalWrite(8, LOW);
+                        digitalWrite(9, LOW);
+                    }
+                    delay(500);
+                }
+            </code>
+        </pre>
+        
+        <h3>Step 4: Run the Python Code for Monitoring</h3>
+        <pre>
+            <code>
+                pip install pyserial
+            </code>
+        </pre>
+        <pre>
+            <code>
+                import serial
+                import time
+                
+                arduino = serial.Serial('COM3', 9600, timeout=1)
+                time.sleep(2)
+                
+                while True:
+                    try:
+                        data = arduino.readline().decode().strip()
+                        if data:
+                            print("Received:", data)
+                            if "Fire Detected" in data:
+                                print("🔥 WARNING: Fire Detected! 🔥")
+                    except KeyboardInterrupt:
+                        print("Exiting...")
+                        arduino.close()
+                        break
+            </code>
+        </pre>
+        
+        <h3>Step 5: Testing the System</h3>
+        <h4>Flame Sensor Testing</h4>
+        <p>Use a lighter or candle (at a safe distance). If detected, the buzzer and LED should turn on.</p>
+        
+        <h4>Smoke Sensor Testing</h4>
+        <p>Blow smoke near the MQ-2/MQ-135 sensor. If detected, the buzzer and LED should turn on.</p>
+    </section>
+</body>
+</html>
