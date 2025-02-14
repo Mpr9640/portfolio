@@ -142,13 +142,13 @@ a:hover{
     text-decoration: none;
     background-color: transparent;
     color: rgb(82, 42, 163);
-    border: 2px solid rgb(82, 42, 163);
     padding:10px;
     border-radius: 50%;
 }
 .social-btn:hover{
     transform:scale(1.3);
     transition: 0.3s ease-in-out;
+    background-color:rgb(181, 72, 119);
 }
 .social-btn:nth-child(3){
     color: black;
