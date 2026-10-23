@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Binary Classification using Rice Dataset",
+    "url": "https://colab.research.google.com/drive/1HgjOfBCTL5xf90Os-RCE_Kc_CPYWIWAz?usp=sharing"
+  },
+  {
+    "title": "Multi Classification using MLP",
+    "url": "https://colab.research.google.com/drive/19Z2AGL49c8CGToShN3fhT95L2H6hvyZg?usp=sharing"
+  },
+  {
+    "title": "Data Augmentation using CNN (MNIST)",
+    "url": "https://colab.research.google.com/drive/1ZzAyFVZLp04s26ctLhE72kLBahXh5V0-?usp=sharing"
+  },
+  {
+    "title": "Transfer Learning",
+    "url": "https://colab.research.google.com/drive/1UOLiVTVtQw3_fiB-9I3S3Z79tUULVjOJ?usp=sharing"
+  },
+  {
+    "title": "Linear Regression",
+    "url": "https://colab.research.google.com/drive/1mKGiXFl1ytnFFgoSzNuudJcbr-NbVSE7?usp=sharing"
+  },
+  {
+    "title": "Fairness Indicator",
+    "url": "https://colab.research.google.com/drive/1t3Q7TziFZsbvHFM9epNv7lWjSiO5KfSn?usp=sharing"
+  }
+]
